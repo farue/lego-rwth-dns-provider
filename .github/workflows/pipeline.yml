@@ -1,7 +1,7 @@
 on:
   push:
     tags:
-      - '*'
+      - 'v*'
 
 permissions:
   contents: write
@@ -12,6 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       GO_VERSION: 1.18
+      CGO_ENABLED: 0
 
     steps:
       - name: Set up Go ${{ env.GO_VERSION }}
